@@ -16,11 +16,12 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     "
 	config.ssh.shell = "bash -c 'BASH_ENV=/etc/profile exec bash'"
 
-	config.vm.provider :virtualbox do |vb|
-	  vb.gui = true
-	end
+#	config.vm.provider :virtualbox do |vb|
+#	  vb.gui = true
+#	end
 
 	config.vm.network "forwarded_port", guest: 80, host: 7777
+
     config.vm.network "private_network", ip: "192.168.7.7"
 
     config.vm.synced_folder "D:\\appweb", "/var/www/default"
